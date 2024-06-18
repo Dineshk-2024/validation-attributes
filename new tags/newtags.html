@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML5 NEW TAGS</title>
+</head>
+<body>
+    <article>
+        <h1> Article Tag for like news content and blog posts   </h1>
+        <h2>HTML5 Semantic Elements</h2>
+        <h3><p>HTML5 introduces several new semantic elements that help to define the structure of a web page more clearly.</p></h3>
+        <p>One of these elements is the <code>&lt;article&gt;</code> tag, which is used to represent a self-contained piece of content.</p>
+      </article> 
+      <hr>
+      <article>
+        <h1> aside tag < code>& lt;dinesh& gt;< /code></h1>
+        <h2>Understanding HTML5 Semantic Elements</h2>
+        <p>HTML5 introduces several new elements that help define the structure of a web page more clearly.</p>
+        <p>These elements include < article >,<code>&lt;dinesh&gt;</code>,<code>&lt;section&gt;</code>, <code>&lt;nav&gt;</code>, and <code>&lt;aside&gt;</code>.</p>
+      
+        <aside>
+          <h3>Did You Know?</h3>
+          <p>The <code>&lt;aside&gt;</code> element can be used for side notes, related links, or any other content that complements the main content.</p>
+        </aside>
+      </article>
+      <hr>
+      <h1>Audio Tag with Attributes</h1>
+      <audio controls>
+        <source src="./C:\Users\User\Downloads\Theera Mazhai.mp3" type="audio/mpeg">
+        <source src="./C:\Users\User\Downloads\Theera Mazhai.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+      <br>
+    <audio controls autoplay loop muted preload="auto">
+        <source src="audio-file.mp3" type="audio/mpeg">
+        <source src="audio-file.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio controls>
+      <source src="Theera Mazhai.mp3" type="audio/mp3">
+    </audio>
+    <hr>
+    <h1>Video tag</h1>
+    <video controls>
+      <source src="thangamey.mp4" type="video/mp4">
+    </video>
+    <hr>
+    <h1>Canvas tag </h1>
+    <canvas id="myCanvas" width="100" height="100"></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+        
+        function drawGradient() {
+            var gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, 'red');
+            gradient.addColorStop(1, 'blue');
+            
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        var x = 50;
+        var y = 50;
+        var dx = 2;
+        var dy = 2;
+        var radius = 30;
+
+        function drawCircle() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            drawGradient();
+            
+            context.beginPath();
+            context.arc(x, y, radius, 0, Math.PI * 2, false);
+            context.fillStyle = 'red';
+            context.fill();
+            context.stroke();
+            
+            if (x + radius > canvas.width || x - radius < 0) {
+                dx = -dx;
+            }
+            if (y + radius > canvas.height || y - radius < 0) {
+                dy = -dy;
+            }
+            
+            x += dx;
+            y += dy;
+        }
+
+        function animate() {
+            drawCircle();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+
+    <hr>
+    <div >
+      <h1>Command tag</h1>
+      <button type="button" onclick="saveFile()">Save</button>
+      <label>
+          <input type="checkbox" checked> Autosave
+      </label>
+      <label>
+          <input type="radio" name="options" checked> Option 1
+      </label>
+      <label>
+          <input type="radio" name="options"> Option 2
+      </label>
+  </div>
+  <hr>
+  <label for="browser">Choose a browser:</label>
+  <input list="browsers" id="browser" name="browser" placeholder="datalist">
+  <datalist id="browsers">
+      <option value="Chrome">
+      <option value="Firefox">
+      <option value="Safari">
+      <option value="Edge">
+      <option value="Opera">
+  </datalist>
+  <hr>
+  <h1>Details tag</h1>
+  <details>
+    <summary>Summary Text</summary>
+    Additional content goes here.
+  </details>
+  <hr>
+
+  <h1>Embedded PDF Document</h1>
+    <embed src="Assignment-1.pdf" type="application/pdf" width="600" height="300">
+  <hr>
+
+  <header>
+    <h1>My Website</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<hr>
+
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+  <nav>
+      <a href="#privacy">Privacy Policy</a>
+      <a href="#terms">Terms of Service</a>
+  </nav>
+</footer>
+</body>
+</html>
